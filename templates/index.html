@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanelTracker</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h1>PanelTracker</h1>
+            <small>Patient Panel Manager</small>
+        </div>
+        <nav>
+            <a onclick="navigate('dashboard')" data-page="dashboard" class="active">
+                <span class="icon">&#9633;</span> Dashboard
+            </a>
+            <a onclick="navigate('patients')" data-page="patients">
+                <span class="icon">&#9823;</span> Patients
+            </a>
+            <a onclick="navigate('registry')" data-page="registry">
+                <span class="icon">&#9881;</span> Registries
+            </a>
+            <a onclick="navigate('reminders')" data-page="reminders">
+                <span class="icon">&#9203;</span> Reminders
+            </a>
+        </nav>
+        <div class="panel-count" id="panel-count">Loading...</div>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        <!-- Rendered by JS -->
+    </main>
+</div>
+
+<div class="toast-container" id="toast-container"></div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>

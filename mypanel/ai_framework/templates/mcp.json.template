@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/schemas/mcp-servers.json",
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic/mcp-filesystem@latest",
+        "${PROJECT_ROOT}/ai_project"
+      ],
+      "description": "Project documentation and specs access"
+    }
+  },
+  "_hegemon_notes": {
+    "usage": "Copy this file to .claude/mcp.json and customize for your project",
+    "common_servers": {
+      "filesystem": "Access to local files and directories",
+      "github": "GitHub repository operations",
+      "postgres": "PostgreSQL database access",
+      "sqlite": "SQLite database queries",
+      "memory": "Persistent memory/notes storage",
+      "brave-search": "Web search capabilities",
+      "puppeteer": "Browser automation",
+      "slack": "Slack workspace integration"
+    },
+    "installation": "Most servers installed via npx. See MCP_SETUP.md for details.",
+    "security": "MCP servers have access to external resources. Review permissions carefully."
+  }
+}

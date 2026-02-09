@@ -1,0 +1,141 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Production builds
+dist/
+build/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files (but NOT AI directive files)
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+# IMPORTANT: AI directive files should be tracked
+# .cursorrules - Tracked (Cursor AI rules - auto-loads)
+# AI_CONTEXT.md - Tracked (Resume instructions for any AI)
+# CLAUDE.md - Tracked (Framework directives)
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Framework Development Files (Master Repo Only)
+# These are internal development docs for framework development
+# They should NOT be in .gitignore when this template is used for actual projects
+.hegemon_master_repo
+WORKING_LOCAL_LLM_PLAN.md
+WORKING_PARALLEL_AGENT_PLAN.md
+WORKING_POST_INIT_CLEANUP_PLAN.md
+WORKING_*.md
+/ai_framework/contexts/working_hegemon_dev_context.md
+
+# Hook-generated log files (Master Repo Only - remove for project use)
+/ai_project/state/interaction_history.jsonl
+/ai_project/state/tool_usage.jsonl
+
+# IMPORTANT: Project Work Files ARE TRACKED
+# The following are the ACTUAL PROJECT and MUST be committed to git:
+# ✓ /PRD.md and /PRD_*.md - Project requirements (TRACK THESE)
+# ✓ /ai_project/specs/ - All specifications (TRACK THESE)
+# ✓ /ai_project/tasks/ - All task lists (TRACK THESE)
+# ✓ /ai_project/state/ - Session state for recovery (TRACK THESE)
+# ✓ /ai_project/contexts/ - Project-specific directives (TRACK THESE)
+# ✓ /ai_project/resources/ - Project assets and examples (TRACK THESE)
+
+# Only ignore truly temporary/personal files:
+# - Build artifacts are already ignored above (dist/, build/, node_modules/)
+# - Secrets are already ignored above (.env files)
+# - OS junk is already ignored above (.DS_Store, etc.)
+# - The actual project work MUST be tracked in version control
+UPDATE_PROMPT.md
+.claude/.completion_summary
+
+# Claude Code local settings (may contain personal paths)
+.claude/settings.local.json
+.claude/mcp.json
+*.local.json
+
+ttst/

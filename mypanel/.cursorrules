@@ -1,0 +1,98 @@
+# Cursor AI Rules - Auto-loads for any AI model in Cursor IDE
+
+## CRITICAL: Framework Loading Instructions
+
+### 🚨 FIRST ACTION REQUIRED 🚨
+Before ANY other action, you MUST:
+1. Read and internalize `/CLAUDE.md` - This contains the core framework directives
+2. Read `/project_dev/PROJECT_DIRECTIVES.md` - This contains project-specific rules
+3. Check `/project_dev/state/project_progress.json` for current project state
+4. Detect current workflow mode from context
+
+## Framework Overview
+This project uses a sophisticated AI Development Framework with:
+- Three workflow modes (Planning, Task, Direct)
+- Automatic state persistence
+- Violation prevention and recovery
+- Spec-driven development approach
+
+## Workflow Modes
+
+### Current Mode Detection
+Always check what mode we're in based on:
+- User's message content
+- Current project state
+- Last recorded mode
+
+### Mode Rules
+1. **PLANNING_MODE**: Can only read files and update specs
+2. **TASK_MODE**: Can only implement approved tasks
+3. **DIRECT_MODE**: Requires explicit override acknowledgment
+
+## State Management
+- All state is in `/project_dev/state/` as JSON
+- State persists across sessions
+- Load state at start of EVERY interaction
+- Save state after EVERY meaningful action
+
+## Directory Structure Rules
+```
+/CLAUDE.md                    # Framework directives (READ FIRST)
+/project_dev/
+  ├── PROJECT_DIRECTIVES.md   # Project customizations (READ SECOND)
+  ├── PRD.md                  # Product requirements
+  ├── specs/                  # ALL specs go here (NEVER in root)
+  ├── tasks/                  # Task definitions
+  └── state/                  # Persistent state
+```
+
+## Violation Prevention
+Before ANY file modification:
+1. Check current workflow mode
+2. Validate action is allowed in mode
+3. Check for approved task (if in TASK_MODE)
+4. Get explicit override if needed
+
+## Recovery Protocol
+If you detect a violation:
+1. STOP immediately
+2. Explain the violation
+3. Offer recovery options
+4. Wait for user direction
+
+## Python State Management
+Use the state_manager.py module:
+```python
+from project_dev.state.state_manager import StateManager, detect_workflow_mode
+from project_dev.state.workflow_validator import validate_workflow
+
+# Always check mode first
+current_mode = detect_workflow_mode(user_message)
+# Validate actions
+result = validate_workflow(action, user_message)
+```
+
+## Critical Rules
+- NEVER modify code without checking workflow mode
+- NEVER skip from PRD directly to implementation
+- ALWAYS announce mode transitions
+- ALWAYS save state after actions
+- NEVER create specs outside `/project_dev/specs/`
+
+## Model Compatibility
+This framework works identically with:
+- Claude (any version)
+- OpenAI GPT models (any version)
+- Other instruction-following AI models
+
+State persists in JSON format readable by all models.
+
+## Session Start Checklist
+☐ Read /CLAUDE.md completely
+☐ Read /project_dev/PROJECT_DIRECTIVES.md
+☐ Load current state from /project_dev/state/
+☐ Detect current workflow mode
+☐ Check for active tasks
+☐ Announce current mode and phase
+
+Remember: The framework ensures quality and prevents errors. Trust the process!
